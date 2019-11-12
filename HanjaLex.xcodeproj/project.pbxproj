@@ -1,0 +1,757 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E0883622237B606F005066C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883621237B606F005066C4 /* AppDelegate.swift */; };
+		E0883624237B606F005066C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883623237B606F005066C4 /* ViewController.swift */; };
+		E0883627237B606F005066C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0883625237B606F005066C4 /* Main.storyboard */; };
+		E0883629237B6070005066C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0883628237B6070005066C4 /* Assets.xcassets */; };
+		E088362C237B6070005066C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E088362A237B6070005066C4 /* LaunchScreen.storyboard */; };
+		E0883637237B6070005066C4 /* HanjaLexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883636237B6070005066C4 /* HanjaLexTests.swift */; };
+		E0883642237B6070005066C4 /* HanjaLexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883641237B6070005066C4 /* HanjaLexUITests.swift */; };
+		E0883668237B61EB005066C4 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E088365A237B61D5005066C4 /* SQLite.framework */; };
+		E0883669237B61F6005066C4 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E088365A237B61D5005066C4 /* SQLite.framework */; };
+		E088366A237B61F6005066C4 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E088365A237B61D5005066C4 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E0883633237B6070005066C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0883616237B606F005066C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E088361D237B606F005066C4;
+			remoteInfo = HanjaLex;
+		};
+		E088363E237B6070005066C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0883616237B606F005066C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E088361D237B606F005066C4;
+			remoteInfo = HanjaLex;
+		};
+		E0883659237B61D5005066C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E088364F237B61D4005066C4 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		E088365B237B61D5005066C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E088364F237B61D4005066C4 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		E088365D237B61D5005066C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E088364F237B61D4005066C4 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		E088365F237B61D5005066C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E088364F237B61D4005066C4 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		E0883661237B61D5005066C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E088364F237B61D4005066C4 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		E0883663237B61D5005066C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E088364F237B61D4005066C4 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		E0883665237B61D5005066C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E088364F237B61D4005066C4 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
+		E088366B237B61F6005066C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E088364F237B61D4005066C4 /* SQLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EE247AD21C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E088366D237B61F6005066C4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E088366A237B61F6005066C4 /* SQLite.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E088361E237B606F005066C4 /* HanjaLex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HanjaLex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0883621237B606F005066C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E0883623237B606F005066C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E0883626237B606F005066C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0883628237B6070005066C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E088362B237B6070005066C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E088362D237B6070005066C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0883632237B6070005066C4 /* HanjaLexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HanjaLexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0883636237B6070005066C4 /* HanjaLexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HanjaLexTests.swift; sourceTree = "<group>"; };
+		E0883638237B6070005066C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E088363D237B6070005066C4 /* HanjaLexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HanjaLexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0883641237B6070005066C4 /* HanjaLexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HanjaLexUITests.swift; sourceTree = "<group>"; };
+		E0883643237B6070005066C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E088364F237B61D4005066C4 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E088361B237B606F005066C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0883669237B61F6005066C4 /* SQLite.framework in Frameworks */,
+				E0883668237B61EB005066C4 /* SQLite.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E088362F237B6070005066C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E088363A237B6070005066C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E0883615237B606F005066C4 = {
+			isa = PBXGroup;
+			children = (
+				E0883620237B606F005066C4 /* HanjaLex */,
+				E0883635237B6070005066C4 /* HanjaLexTests */,
+				E0883640237B6070005066C4 /* HanjaLexUITests */,
+				E088361F237B606F005066C4 /* Products */,
+				E088364F237B61D4005066C4 /* SQLite.xcodeproj */,
+				E0883667237B61EB005066C4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E088361F237B606F005066C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E088361E237B606F005066C4 /* HanjaLex.app */,
+				E0883632237B6070005066C4 /* HanjaLexTests.xctest */,
+				E088363D237B6070005066C4 /* HanjaLexUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0883620237B606F005066C4 /* HanjaLex */ = {
+			isa = PBXGroup;
+			children = (
+				E0883621237B606F005066C4 /* AppDelegate.swift */,
+				E0883623237B606F005066C4 /* ViewController.swift */,
+				E0883625237B606F005066C4 /* Main.storyboard */,
+				E0883628237B6070005066C4 /* Assets.xcassets */,
+				E088362A237B6070005066C4 /* LaunchScreen.storyboard */,
+				E088362D237B6070005066C4 /* Info.plist */,
+			);
+			path = HanjaLex;
+			sourceTree = "<group>";
+		};
+		E0883635237B6070005066C4 /* HanjaLexTests */ = {
+			isa = PBXGroup;
+			children = (
+				E0883636237B6070005066C4 /* HanjaLexTests.swift */,
+				E0883638237B6070005066C4 /* Info.plist */,
+			);
+			path = HanjaLexTests;
+			sourceTree = "<group>";
+		};
+		E0883640237B6070005066C4 /* HanjaLexUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E0883641237B6070005066C4 /* HanjaLexUITests.swift */,
+				E0883643237B6070005066C4 /* Info.plist */,
+			);
+			path = HanjaLexUITests;
+			sourceTree = "<group>";
+		};
+		E0883650237B61D4005066C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E088365A237B61D5005066C4 /* SQLite.framework */,
+				E088365C237B61D5005066C4 /* SQLiteTests iOS.xctest */,
+				E088365E237B61D5005066C4 /* SQLite.framework */,
+				E0883660237B61D5005066C4 /* SQLiteTests Mac.xctest */,
+				E0883662237B61D5005066C4 /* SQLite.framework */,
+				E0883664237B61D5005066C4 /* SQLiteTests tvOS.xctest */,
+				E0883666237B61D5005066C4 /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0883667237B61EB005066C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E088361D237B606F005066C4 /* HanjaLex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0883646237B6070005066C4 /* Build configuration list for PBXNativeTarget "HanjaLex" */;
+			buildPhases = (
+				E088361A237B606F005066C4 /* Sources */,
+				E088361B237B606F005066C4 /* Frameworks */,
+				E088361C237B606F005066C4 /* Resources */,
+				E088366D237B61F6005066C4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E088366C237B61F6005066C4 /* PBXTargetDependency */,
+			);
+			name = HanjaLex;
+			productName = HanjaLex;
+			productReference = E088361E237B606F005066C4 /* HanjaLex.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E0883631237B6070005066C4 /* HanjaLexTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0883649237B6070005066C4 /* Build configuration list for PBXNativeTarget "HanjaLexTests" */;
+			buildPhases = (
+				E088362E237B6070005066C4 /* Sources */,
+				E088362F237B6070005066C4 /* Frameworks */,
+				E0883630237B6070005066C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0883634237B6070005066C4 /* PBXTargetDependency */,
+			);
+			name = HanjaLexTests;
+			productName = HanjaLexTests;
+			productReference = E0883632237B6070005066C4 /* HanjaLexTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E088363C237B6070005066C4 /* HanjaLexUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E088364C237B6070005066C4 /* Build configuration list for PBXNativeTarget "HanjaLexUITests" */;
+			buildPhases = (
+				E0883639237B6070005066C4 /* Sources */,
+				E088363A237B6070005066C4 /* Frameworks */,
+				E088363B237B6070005066C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E088363F237B6070005066C4 /* PBXTargetDependency */,
+			);
+			name = HanjaLexUITests;
+			productName = HanjaLexUITests;
+			productReference = E088363D237B6070005066C4 /* HanjaLexUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E0883616237B606F005066C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Kevin Fu";
+				TargetAttributes = {
+					E088361D237B606F005066C4 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					E0883631237B6070005066C4 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = E088361D237B606F005066C4;
+					};
+					E088363C237B6070005066C4 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = E088361D237B606F005066C4;
+					};
+				};
+			};
+			buildConfigurationList = E0883619237B606F005066C4 /* Build configuration list for PBXProject "HanjaLex" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E0883615237B606F005066C4;
+			productRefGroup = E088361F237B606F005066C4 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E0883650237B61D4005066C4 /* Products */;
+					ProjectRef = E088364F237B61D4005066C4 /* SQLite.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E088361D237B606F005066C4 /* HanjaLex */,
+				E0883631237B6070005066C4 /* HanjaLexTests */,
+				E088363C237B6070005066C4 /* HanjaLexUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E088365A237B61D5005066C4 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = E0883659237B61D5005066C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E088365C237B61D5005066C4 /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = E088365B237B61D5005066C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E088365E237B61D5005066C4 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = E088365D237B61D5005066C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E0883660237B61D5005066C4 /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = E088365F237B61D5005066C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E0883662237B61D5005066C4 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = E0883661237B61D5005066C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E0883664237B61D5005066C4 /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = E0883663237B61D5005066C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E0883666237B61D5005066C4 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = E0883665237B61D5005066C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E088361C237B606F005066C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E088362C237B6070005066C4 /* LaunchScreen.storyboard in Resources */,
+				E0883629237B6070005066C4 /* Assets.xcassets in Resources */,
+				E0883627237B606F005066C4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0883630237B6070005066C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E088363B237B6070005066C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E088361A237B606F005066C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0883624237B606F005066C4 /* ViewController.swift in Sources */,
+				E0883622237B606F005066C4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E088362E237B6070005066C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0883637237B6070005066C4 /* HanjaLexTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0883639237B6070005066C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0883642237B6070005066C4 /* HanjaLexUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E0883634237B6070005066C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E088361D237B606F005066C4 /* HanjaLex */;
+			targetProxy = E0883633237B6070005066C4 /* PBXContainerItemProxy */;
+		};
+		E088363F237B6070005066C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E088361D237B606F005066C4 /* HanjaLex */;
+			targetProxy = E088363E237B6070005066C4 /* PBXContainerItemProxy */;
+		};
+		E088366C237B61F6005066C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SQLite iOS";
+			targetProxy = E088366B237B61F6005066C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E0883625237B606F005066C4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0883626237B606F005066C4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E088362A237B6070005066C4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E088362B237B6070005066C4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E0883644237B6070005066C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E0883645237B6070005066C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E0883647237B6070005066C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DLC4U65DDU;
+				INFOPLIST_FILE = HanjaLex/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.KevinFu.HanjaLex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E0883648237B6070005066C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DLC4U65DDU;
+				INFOPLIST_FILE = HanjaLex/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.KevinFu.HanjaLex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E088364A237B6070005066C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HanjaLexTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.KevinFu.HanjaLexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HanjaLex.app/HanjaLex";
+			};
+			name = Debug;
+		};
+		E088364B237B6070005066C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HanjaLexTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.KevinFu.HanjaLexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HanjaLex.app/HanjaLex";
+			};
+			name = Release;
+		};
+		E088364D237B6070005066C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HanjaLexUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.KevinFu.HanjaLexUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HanjaLex;
+			};
+			name = Debug;
+		};
+		E088364E237B6070005066C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HanjaLexUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.KevinFu.HanjaLexUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HanjaLex;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E0883619237B606F005066C4 /* Build configuration list for PBXProject "HanjaLex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0883644237B6070005066C4 /* Debug */,
+				E0883645237B6070005066C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0883646237B6070005066C4 /* Build configuration list for PBXNativeTarget "HanjaLex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0883647237B6070005066C4 /* Debug */,
+				E0883648237B6070005066C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0883649237B6070005066C4 /* Build configuration list for PBXNativeTarget "HanjaLexTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E088364A237B6070005066C4 /* Debug */,
+				E088364B237B6070005066C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E088364C237B6070005066C4 /* Build configuration list for PBXNativeTarget "HanjaLexUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E088364D237B6070005066C4 /* Debug */,
+				E088364E237B6070005066C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E0883616237B606F005066C4 /* Project object */;
+}
