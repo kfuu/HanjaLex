@@ -9,7 +9,9 @@
 import UIKit
 import SQLite
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var database: Connection!
     let hanjas = Expression<String>("hanjas")
@@ -42,6 +44,13 @@ class ViewController: UIViewController {
             
         } catch {
             print(error)
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            
+            performSegue(withIdentifier: "hanjaTable", sender: self)
         }
     }
     
