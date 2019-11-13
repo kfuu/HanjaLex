@@ -9,7 +9,9 @@
 import UIKit
 import SQLite
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var database: Connection!
     let hanjas = Expression<String>("hanjas")
@@ -31,8 +33,10 @@ class ViewController: UIViewController {
     } // end viewDidLoad()
     
     
-    @IBAction func testDatabase() {
+    @IBAction func testDatabase(_ sender: UIButton) {
         print("TESTING DATABASE")
+        
+        print(database)
         
         do {
             let radicals = try self.database.prepare(Table("radicals"))
@@ -42,6 +46,14 @@ class ViewController: UIViewController {
             
         } catch {
             print(error)
+        }
+    }
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            
+            performSegue(withIdentifier: "hanjaTable", sender: self)
         }
     }
     
