@@ -49,7 +49,6 @@ class ViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
             
