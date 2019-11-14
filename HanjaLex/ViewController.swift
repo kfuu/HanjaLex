@@ -36,25 +36,25 @@ class ViewController: UIViewController, UISearchBarDelegate {
     } // end viewDidLoad()
     
     
-    @IBAction func testDatabase(_ sender: UIButton) {
-        print("TESTING DATABASE")
-        
-        do {
-            let radicals = try self.database.prepare(Table("radicals"))
-            for radical in radicals {
-                print("\(radical[Expression<String>("radical")])      \(radical[Expression<String>("hanjas")])")
-                print()
-            }
-            
-            let hanjas = try self.database.prepare("SELECT hanjas, definition FROM hanja_definition WHERE hanjas = '全'")
-            for row in hanjas {
-                print("\(row[0] ?? "None")         \(row[1] ?? "None" )")
-            }
-            
-        } catch {
-            print(error)
-        }
-    }
+//    @IBAction func testDatabase(_ sender: UIButton) {
+//        print("TESTING DATABASE")
+//
+//        do {
+//            let radicals = try self.database.prepare(Table("radicals"))
+//            for radical in radicals {
+//                print("\(radical[Expression<String>("radical")])      \(radical[Expression<String>("hanjas")])")
+//                print()
+//            }
+//
+//            let hanjas = try self.database.prepare("SELECT hanjas, definition FROM hanja_definition WHERE hanjas = '全'")
+//            for row in hanjas {
+//                print("\(row[0] ?? "None")         \(row[1] ?? "None" )")
+//            }
+//
+//        } catch {
+//            print(error)
+//        }
+//    }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // everytime something gets typed into the search bar, this function is called.
@@ -63,12 +63,12 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //self.performSegue(withIdentifier: resultsSegue, sender: self)
+        performSegue(withIdentifier: "resultsID", sender: self)
         print("clicked")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "resultsSegue"{
+        if segue.identifier == "resultsID"{
             let results = segue.destination as! resultsPageTableViewController
             results.searchRequest = self.searchInput
         }
