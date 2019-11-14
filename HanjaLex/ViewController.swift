@@ -11,23 +11,27 @@ import SQLite
 
 class ViewController: UIViewController, UISearchBarDelegate {
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var hanjaSearchBar: UISearchBar!
+    var searchInput: String!
     
     var database: Connection!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         
+        self.hanjaSearchBar.searchBarStyle = .minimal// makes it look pretty
+        self.hanjaSearchBar.delegate = self // makes it so that the delegate property of the search bar can use the delegate methods. in plain english, if this was not here, the textDidChange function would not be called.
+        
+        // connecting to the database
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let fileUrl = documentDirectory.appendingPathComponent("hanjadic").appendingPathExtension("sqlite")
             let database = try Connection(fileUrl.path)
             self.database = database
         }
-        catch {
-            print(error)
-        }
+        catch { print(error) }
         
     } // end viewDidLoad()
     
@@ -35,8 +39,6 @@ class ViewController: UIViewController, UISearchBarDelegate {
     @IBAction func testDatabase(_ sender: UIButton) {
         print("TESTING DATABASE")
         
-        //print(database)
-
         do {
             let radicals = try self.database.prepare(Table("radicals"))
             for radical in radicals {
@@ -54,11 +56,19 @@ class ViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let text = searchBar.text {
-            
-            performSegue(withIdentifier: "hanjaTable", sender: self)
-        }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // everytime something gets typed into the search bar, this function is called.
+        self.searchInput = hanjaSearchBar.text
+        print(self.searchInput!)
+    }
+    
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        performSegue(withIdentifier: resultsSegue, sender: <#T##Any?#>)
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let resultsSegue = segue.destination as! resultsPageTableViewController
+        resultsSegue.searchRequest = searchInput
     }
     
 

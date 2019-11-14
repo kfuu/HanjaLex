@@ -17,6 +17,7 @@
 		E0E8E540237CE77200AD893E /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E8E533237CE73800AD893E /* SQLite.framework */; };
 		E0E8E541237CE77C00AD893E /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E8E533237CE73800AD893E /* SQLite.framework */; };
 		E0E8E542237CE77C00AD893E /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0E8E533237CE73800AD893E /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E0E8E54A237CFEDD00AD893E /* resultsPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E8E549237CFEDD00AD893E /* resultsPageTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		E0883641237B6070005066C4 /* HanjaLexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HanjaLexUITests.swift; sourceTree = "<group>"; };
 		E0883643237B6070005066C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0E8E528237CE73800AD893E /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "src/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		E0E8E549237CFEDD00AD893E /* resultsPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsPageTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			children = (
 				E0883621237B606F005066C4 /* AppDelegate.swift */,
 				E0883623237B606F005066C4 /* ViewController.swift */,
+				E0E8E549237CFEDD00AD893E /* resultsPageTableViewController.swift */,
 				E0883625237B606F005066C4 /* Main.storyboard */,
 				E0883628237B6070005066C4 /* Assets.xcassets */,
 				E088362A237B6070005066C4 /* LaunchScreen.storyboard */,
@@ -415,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E8E54A237CFEDD00AD893E /* resultsPageTableViewController.swift in Sources */,
 				E0883624237B606F005066C4 /* ViewController.swift in Sources */,
 				E0883622237B606F005066C4 /* AppDelegate.swift in Sources */,
 			);
