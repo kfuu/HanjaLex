@@ -38,7 +38,7 @@
                     </view>
                     <connections>
                         <outlet property="hanjaSearchBar" destination="lZF-gU-tN2" id="68H-bi-KGg"/>
-                        <segue destination="Wqw-p6-ZzW" kind="show" identifier="resultsSegue" id="Pmp-AC-ROp"/>
+                        <segue destination="Wqw-p6-ZzW" kind="show" identifier="resultsSegue" id="WOO-al-Vgt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

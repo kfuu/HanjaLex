@@ -63,12 +63,14 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
     
 //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        performSegue(withIdentifier: resultsSegue, sender: <#T##Any?#>)
+//        self.performSegue(withIdentifier: resultsSegue, sender: self)
 //    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let resultsSegue = segue.destination as! resultsPageTableViewController
-        resultsSegue.searchRequest = searchInput
+        if segue.identifier == "resultsSegue"{
+            let results = segue.destination as! resultsPageTableViewController
+            results.searchRequest = self.searchInput
+        }
     }
     
 
