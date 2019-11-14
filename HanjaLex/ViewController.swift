@@ -21,10 +21,10 @@ class ViewController: UIViewController, UISearchBarDelegate {
         // Do any additional setup after loading the view.
         
         do {
-            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            let fileUrl = documentDirectory.appendingPathComponent("hanjadict").appendingPathExtension("sqlite3")
-            let database = try Connection(fileUrl.path)
-            self.database = database
+//            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+//            let fileUrl = documentDirectory.appendingPathComponent("hanjadict").appendingPathExtension("sqlite3")
+//            let database = try Connection(fileUrl.path)
+//            self.database = database
         }
         catch {
             print(error)
@@ -36,17 +36,17 @@ class ViewController: UIViewController, UISearchBarDelegate {
     @IBAction func testDatabase(_ sender: UIButton) {
         print("TESTING DATABASE")
         
-        print(database)
-        
-        do {
-            let radicals = try self.database.prepare(Table("radicals"))
-            for radical in radicals {
-                print("radical: \(radical[self.hanjas])")
-            }
-            
-        } catch {
-            print(error)
-        }
+//        print(database)
+//
+//        do {
+//            let radicals = try self.database.prepare(Table("radicals"))
+//            for radical in radicals {
+//                print("radical: \(radical[self.hanjas])")
+//            }
+//
+//        } catch {
+//            print(error)
+//        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

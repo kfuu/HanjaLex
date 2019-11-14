@@ -1,0 +1,11 @@
+.DS_Store
+build/
+*.xcuserdatad
+xcuserdata
+Pods/
+*.ipa
+*.xcuserstate
+*.xcworkspace
+*.xcworkspace/xcuserdata/*.xcuserdatad/
+*/*.xcodeproj/xcuserdata/
+
