@@ -9,19 +9,24 @@
 import UIKit
 import SQLite
 
+struct HanjaInfo {
+    var hanja: String = ""
+    var hangul: String = ""
+    var english: String = ""
+}
+
 class resultsPageTableViewController: UITableViewController{
     
     var database: Connection!
     
     var searchRequest: String!
-    var resultsArray = [(String, String, String)]()
+    var hanjaSelection: String!
+    var resultsArray = [HanjaInfo]()
 
     @IBOutlet var resultsTable: UITableView!
     @IBOutlet weak var resultTitle: UINavigationItem!
+    @IBOutlet weak var hanjaLabel: UILabel!
     
-    class HeadlineTableViewCell: UITableViewCell {
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +42,6 @@ class resultsPageTableViewController: UITableViewController{
         // implement segue to hanja page
         // etc
         
-        //self.sampleItems.append(searchRequest)
-        //print(self.sampleItems)
-        
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let fileUrl = documentDirectory.appendingPathComponent("hanjadic").appendingPathExtension("sqlite")
@@ -48,7 +50,9 @@ class resultsPageTableViewController: UITableViewController{
         }
         catch { print(error) }
         
+        //self.registerTableViewCells()
         loadTable()
+        
         self.resultsTable.reloadData()
 
 
@@ -65,15 +69,15 @@ class resultsPageTableViewController: UITableViewController{
             let infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hangul LIKE '\(self.searchRequest ?? "인")%' ORDER BY hangul")
             
             for row in infos {
-                self.resultsArray.append((row[0]! as! String, row[1]! as! String, row[2]! as! String))
-                //print("\(row[0])     \(row[1])      \(row[2])")
+                var newEntry = HanjaInfo()
                 
+                newEntry.hanja = row[0] as! String
+                newEntry.hangul = row[1] as! String
+                newEntry.english = row[2] as! String
+                
+                self.resultsArray.append(newEntry)
             }
-            
-        } catch {
-            print(error)
-        }
-        
+        } catch { print(error) }
     }
 
     // MARK: - Table view data source
@@ -87,17 +91,41 @@ class resultsPageTableViewController: UITableViewController{
         // how many rows should the table have?
         return self.resultsArray.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // where is the table?
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        //print(resultsArray)
         
-        // what's in each row?
-        cell.textLabel?.text = resultsArray[indexPath.row].0 + "    " + resultsArray[indexPath.row].1 + "    " + resultsArray[indexPath.row].2
-
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = self.resultsArray[indexPath.row].hanja + "\t" + self.resultsArray[indexPath.row].hangul + "\t" + self.resultsArray[indexPath.row].english
+        
+//        cell.hanjaLabel.text = self.resultsArray[indexPath.row].hanja
+//        cell.hangulLabel.text = self.resultsArray[indexPath.row].hangul
+//        cell.englishLabel.text = self.resultsArray[indexPath.row].english
+        
         return cell
+        
+        //print("error")
+        //return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.hanjaSelection = self.resultsArray[indexPath.row].hanja as String?
+        performSegue(withIdentifier: "toHanjaInfo", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toHanjaInfo" {
+            let hanjaPage = segue.destination as! hanjaInfoPage
+            hanjaPage.hanjaClicked = self.hanjaSelection
+        }
+    }
+    
+//    func registerTableViewCells() {
+//        let textFieldCell = UINib(nibName: "CustomTableViewCell", bundle: nil)
+//        self.resultsTable.register(textFieldCell, forCellReuseIdentifier: "CustomTableViewCell")
+//    }
     
 
     /*

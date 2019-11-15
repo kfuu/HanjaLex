@@ -18,23 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oox-HA-QXl">
-                                <rect key="frame" x="110" y="111" width="195" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="Test Database"/>
-                                <connections>
-                                    <action selector="testDatabase:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t3o-0B-0F4"/>
-                                </connections>
-                            </button>
                             <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Enter Hanja or Hangul" translatesAutoresizingMaskIntoConstraints="NO" id="lZF-gU-tN2">
                                 <rect key="frame" x="0.0" y="306" width="414" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Bj6-VY-95l"/>
                                 </connections>
@@ -85,11 +72,46 @@
                     <connections>
                         <outlet property="resultTitle" destination="3zh-dJ-otY" id="Cls-IB-9Rc"/>
                         <outlet property="resultsTable" destination="oO3-8J-jny" id="4VW-oW-cnK"/>
+                        <segue destination="atR-6s-jL5" kind="modal" identifier="toHanjaInfo" modalPresentationStyle="pageSheet" id="ePh-tN-ArZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wlX-Hq-aaw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="800.00000000000011" y="16.741071428571427"/>
+        </scene>
+        <!--Navigation-->
+        <scene sceneID="CVS-j1-YGy">
+            <objects>
+                <viewController id="atR-6s-jL5" customClass="hanjaInfoPage" customModule="HanjaLex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="abA-4F-mHa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hanja" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcZ-Md-Zhp">
+                                <rect key="frame" x="135" y="97" width="145" height="57.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="edN-dK-QWs" firstAttribute="trailing" secondItem="PcZ-Md-Zhp" secondAttribute="trailing" constant="134" id="Fa3-7e-Ivp"/>
+                            <constraint firstItem="PcZ-Md-Zhp" firstAttribute="top" secondItem="edN-dK-QWs" secondAttribute="top" constant="53" id="Wug-cW-AgC"/>
+                            <constraint firstItem="PcZ-Md-Zhp" firstAttribute="leading" secondItem="edN-dK-QWs" secondAttribute="leading" constant="135" id="hnP-ks-Pb0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="edN-dK-QWs"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Navigation" id="DBa-jx-Vo7">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ME6-fS-eMr"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="currentHanja" destination="PcZ-Md-Zhp" id="pEc-Iq-WXv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5a7-D2-DND" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800.00000000000011" y="701.78571428571422"/>
         </scene>
     </scenes>
 </document>

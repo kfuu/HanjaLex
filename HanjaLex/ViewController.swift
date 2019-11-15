@@ -59,12 +59,12 @@ class ViewController: UIViewController, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // everytime something gets typed into the search bar, this function is called.
         self.searchInput = hanjaSearchBar.text
-        print(self.searchInput!)
+        //print(self.searchInput!)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         performSegue(withIdentifier: "resultsID", sender: self)
-        print("clicked")
+        //print("clicked")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

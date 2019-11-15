@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75C3BF7C6402FC2544700506 /* Pods_HanjaLex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCBE87B0CFCE75F8F5E5770B /* Pods_HanjaLex.framework */; };
 		E0883622237B606F005066C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883621237B606F005066C4 /* AppDelegate.swift */; };
 		E0883624237B606F005066C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883623237B606F005066C4 /* ViewController.swift */; };
 		E0883627237B606F005066C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0883625237B606F005066C4 /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		E088362C237B6070005066C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E088362A237B6070005066C4 /* LaunchScreen.storyboard */; };
 		E0883637237B6070005066C4 /* HanjaLexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883636237B6070005066C4 /* HanjaLexTests.swift */; };
 		E0883642237B6070005066C4 /* HanjaLexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883641237B6070005066C4 /* HanjaLexUITests.swift */; };
+		E09DFC88237E45D400F65711 /* hanjaInfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DFC87237E45D400F65711 /* hanjaInfoPage.swift */; };
 		E0E8E540237CE77200AD893E /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E8E533237CE73800AD893E /* SQLite.framework */; };
 		E0E8E541237CE77C00AD893E /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E8E533237CE73800AD893E /* SQLite.framework */; };
 		E0E8E542237CE77C00AD893E /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0E8E533237CE73800AD893E /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -108,6 +110,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		256E7911E5C558747E24AB08 /* Pods-HanjaLex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HanjaLex.release.xcconfig"; path = "Target Support Files/Pods-HanjaLex/Pods-HanjaLex.release.xcconfig"; sourceTree = "<group>"; };
+		7AB4CB81DDC790B324B18A66 /* Pods-HanjaLex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HanjaLex.debug.xcconfig"; path = "Target Support Files/Pods-HanjaLex/Pods-HanjaLex.debug.xcconfig"; sourceTree = "<group>"; };
+		DCBE87B0CFCE75F8F5E5770B /* Pods_HanjaLex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HanjaLex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E088361E237B606F005066C4 /* HanjaLex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HanjaLex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0883621237B606F005066C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0883623237B606F005066C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +126,7 @@
 		E088363D237B6070005066C4 /* HanjaLexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HanjaLexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0883641237B6070005066C4 /* HanjaLexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HanjaLexUITests.swift; sourceTree = "<group>"; };
 		E0883643237B6070005066C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E09DFC87237E45D400F65711 /* hanjaInfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hanjaInfoPage.swift; sourceTree = "<group>"; };
 		E0E8E528237CE73800AD893E /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "src/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		E0E8E549237CFEDD00AD893E /* resultsPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsPageTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +138,7 @@
 			files = (
 				E0E8E541237CE77C00AD893E /* SQLite.framework in Frameworks */,
 				E0E8E540237CE77200AD893E /* SQLite.framework in Frameworks */,
+				75C3BF7C6402FC2544700506 /* Pods_HanjaLex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +159,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		619B4A51F37501A24F3CD892 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AB4CB81DDC790B324B18A66 /* Pods-HanjaLex.debug.xcconfig */,
+				256E7911E5C558747E24AB08 /* Pods-HanjaLex.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E0883615237B606F005066C4 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +178,7 @@
 				E0E8E528237CE73800AD893E /* SQLite.xcodeproj */,
 				E088361F237B606F005066C4 /* Products */,
 				E0883667237B61EB005066C4 /* Frameworks */,
+				619B4A51F37501A24F3CD892 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +199,7 @@
 				E0883625237B606F005066C4 /* Main.storyboard */,
 				E0883623237B606F005066C4 /* ViewController.swift */,
 				E0E8E549237CFEDD00AD893E /* resultsPageTableViewController.swift */,
+				E09DFC87237E45D400F65711 /* hanjaInfoPage.swift */,
 				E0883628237B6070005066C4 /* Assets.xcassets */,
 				E088362A237B6070005066C4 /* LaunchScreen.storyboard */,
 				E088362D237B6070005066C4 /* Info.plist */,
@@ -209,6 +228,7 @@
 		E0883667237B61EB005066C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCBE87B0CFCE75F8F5E5770B /* Pods_HanjaLex.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -234,10 +254,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0883646237B6070005066C4 /* Build configuration list for PBXNativeTarget "HanjaLex" */;
 			buildPhases = (
+				D01BFC9A2B58CF778FC3E764 /* [CP] Check Pods Manifest.lock */,
 				E088361A237B606F005066C4 /* Sources */,
 				E088361B237B606F005066C4 /* Frameworks */,
 				E088361C237B606F005066C4 /* Resources */,
 				E088366D237B61F6005066C4 /* Embed Frameworks */,
+				577B3AA4B4D2B24410D2CAE9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -413,12 +435,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		577B3AA4B4D2B24410D2CAE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HanjaLex/Pods-HanjaLex-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/UPCarouselFlowLayout/UPCarouselFlowLayout.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UPCarouselFlowLayout.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HanjaLex/Pods-HanjaLex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D01BFC9A2B58CF778FC3E764 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HanjaLex-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E088361A237B606F005066C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E0E8E54A237CFEDD00AD893E /* resultsPageTableViewController.swift in Sources */,
+				E09DFC88237E45D400F65711 /* hanjaInfoPage.swift in Sources */,
 				E0883624237B606F005066C4 /* ViewController.swift in Sources */,
 				E0883622237B606F005066C4 /* AppDelegate.swift in Sources */,
 			);
@@ -598,6 +668,7 @@
 		};
 		E0883647237B6070005066C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AB4CB81DDC790B324B18A66 /* Pods-HanjaLex.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -619,6 +690,7 @@
 		};
 		E0883648237B6070005066C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 256E7911E5C558747E24AB08 /* Pods-HanjaLex.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
