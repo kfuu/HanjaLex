@@ -29,9 +29,10 @@ class ViewController: UIViewController, UISearchBarDelegate {
         
         // connecting to the database
         do {
-            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            let fileUrl = documentDirectory.appendingPathComponent("hanjadic").appendingPathExtension("sqlite")
-            let database = try Connection(fileUrl.path)
+            //let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            //let fileUrl = documentDirectory.appendingPathComponent("hanjadic").appendingPathExtension("sqlite")
+            //let database = try Connection(fileUrl.path)
+            let database = try Connection("/Users/kfu101/Documents/HanjaLex/HanjaLex/hanjadic.sqlite")
             self.database = database
         }
         catch { print(error) }
