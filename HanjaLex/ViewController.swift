@@ -55,6 +55,11 @@ class ViewController: UIViewController, UISearchBarDelegate {
             results.searchRequest = self.searchInput
         }
     }
+    
+    @IBAction func didUnwind(_ sender: UIStoryboardSegue) {
+        guard let resultsVC = sender.source as? resultsPageTableViewController else {return}
+        
+    }
 
 }
 

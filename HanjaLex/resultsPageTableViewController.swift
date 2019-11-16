@@ -23,7 +23,6 @@ class resultsPageTableViewController: UITableViewController{
     var hanjaSelection: String!
     var resultsArray = [HanjaInfo]()
     
-    
     @IBOutlet var resultsTable: UITableView!
 
     override func viewDidLoad() {
@@ -58,7 +57,6 @@ class resultsPageTableViewController: UITableViewController{
         
         do {
             let infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hangul LIKE '\(self.searchRequest ?? "인")%' ORDER BY hangul")
-            //print(infos)
             
             for row in infos {
                 var newEntry = HanjaInfo()
@@ -105,7 +103,6 @@ class resultsPageTableViewController: UITableViewController{
         self.hanjaSelection = self.resultsArray[indexPath.row].hanja as String?
         performSegue(withIdentifier: "toHanjaInfo", sender: self)
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toHanjaInfo" {

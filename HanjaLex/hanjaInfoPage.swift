@@ -22,10 +22,6 @@ class hanjaInfoPage: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.navigationItem.hidesBackButton = false
-        //self.navigationItem.leftBarButtonItem
-        //self.navigationItem.backBarButtonItem = 
         self.currentHanja.text = self.hanjaClicked
         
 //        let encodedHanja = hanjaClicked.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) //as! String // converts a Chinese character / hangul character to something that can be used in URL
@@ -77,26 +73,40 @@ class hanjaInfoPage: UIViewController {
         
     } // end viewDidLoad()
     
+    let colors = [UIColor.blue, UIColor.green, UIColor.orange, UIColor.lightGray, UIColor.red]
     func loadInfo() {
         do {
-            let infos = try self.database.prepare("SELECT radical from radicals WHERE hanjas LIKE '%\(self.hanjaClicked ?? "人")%'")
-            
             var buttonX: CGFloat = 150
-            for row in infos {
-                //self.radicalString += (row[0] as! String + " ")
-                let hanjaButton = UIButton(frame: CGRect(x: buttonX, y: 250, width: 30, height: 30))
-                buttonX = buttonX + 50
+            var buttonY: CGFloat = 250
+            var i = 0
+            
+            for char in hanjaClicked {
+                let infos = try self.database.prepare("SELECT radical from radicals WHERE hanjas LIKE '%\(char ?? "人")%'")
                 
-                hanjaButton.backgroundColor = UIColor.blue
-                hanjaButton.layer.cornerRadius = 10
-                hanjaButton.setTitle(row[0] as? String, for: [])
-                //hanjaButton.setTitleColor(UIColor.black, for: [])
-                hanjaButton.addTarget(self, action: #selector(hanjaPressed), for: .touchDown)
-                self.view.addSubview(hanjaButton)
-            }
+                for row in infos {
+                    //self.radicalString += (row[0] as! String + " ")
+                    let hanjaButton = UIButton(frame: CGRect(x: buttonX, y: buttonY, width: 30, height: 30))
+                    if buttonX >= 350 {
+                        buttonX = 50
+                        buttonY += 50
+                    }
+                    else { buttonX = buttonX + 50 }
+                    
+                    hanjaButton.backgroundColor = self.colors[i]
+                    hanjaButton.layer.cornerRadius = 10
+                    hanjaButton.setTitle(row[0] as? String, for: [])
+                    hanjaButton.addTarget(self, action: #selector(hanjaPressed), for: .touchDown)
+                    self.view.addSubview(hanjaButton)
+                    
+                } // end infos for loop
+                i += 1
+                
+            } // end hanjaClicked for loop
+            
             //self.radicalLabel.text = self.radicalString
         } catch { print(error) }
-    }
+        
+    } // end loadInfo
     
     @objc func hanjaPressed(sender: UIButton!){
         // perform segue
@@ -105,10 +115,7 @@ class hanjaInfoPage: UIViewController {
         }
         else { print("error") }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        <#code#>
-//    }
+
     
 
     /*
