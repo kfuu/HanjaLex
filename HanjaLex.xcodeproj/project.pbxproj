@@ -165,7 +165,6 @@
 				7AB4CB81DDC790B324B18A66 /* Pods-HanjaLex.debug.xcconfig */,
 				256E7911E5C558747E24AB08 /* Pods-HanjaLex.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

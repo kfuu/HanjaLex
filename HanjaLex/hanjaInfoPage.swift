@@ -7,20 +7,52 @@
 //
 
 import UIKit
+import SQLite
+import WebKit
 //import UPCarouselFlowLayout
 
 class hanjaInfoPage: UIViewController {
     
     var hanjaClicked: String!
     @IBOutlet weak var currentHanja: UILabel!
+    @IBOutlet weak var radicalLabel: UILabel!
+    var radicalString:String = "radicals: "
+    
+    var database: Connection!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.currentHanja.text = hanjaClicked
+        //self.navigationItem.hidesBackButton = false
+        //self.navigationItem.leftBarButtonItem
+        //self.navigationItem.backBarButtonItem = 
+        self.currentHanja.text = self.hanjaClicked
         
-        print("hi")
+//        let encodedHanja = hanjaClicked.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) //as! String // converts a Chinese character / hangul character to something that can be used in URL
+//        // check for case of multiple characters in hanjaClicked
+//        let url = "https://en.wiktionary.org/wiki/\(encodedHanja ?? "%E4%BA%BA")" // default value is 人 for now
+//        guard let myURL = URL(string: url) else {
+//            print("Error: \(url) doesn't seem to be a valid URL")
+//            return
+//        }
+//        do {
+//            let myHTMLString = try String(contentsOf: myURL, encoding: .ascii)
+//            print("HTML : \(myHTMLString)")
+//        } catch let error {
+//            print("Error : \(error)")
+//        }
         
+        do {
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            //print(documentDirectory)
+            let fileUrl = documentDirectory.appendingPathComponent("hanjadic").appendingPathExtension("sqlite")
+            let database = try Connection(fileUrl.path)
+            self.database = database
+        }
+        catch { print(error) }
+        
+        loadInfo()
+    
         // "https://en.wiktionary.org/wiki/\(hanjaClicked)"
         // using urlsession and getting json from webpage
 //        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else { return }
@@ -42,7 +74,41 @@ class hanjaInfoPage: UIViewController {
 //
 //        // Do any additional setup after loading the view.
 //        print("hello")
+        
+    } // end viewDidLoad()
+    
+    func loadInfo() {
+        do {
+            let infos = try self.database.prepare("SELECT radical from radicals WHERE hanjas LIKE '%\(self.hanjaClicked ?? "人")%'")
+            
+            var buttonX: CGFloat = 150
+            for row in infos {
+                //self.radicalString += (row[0] as! String + " ")
+                let hanjaButton = UIButton(frame: CGRect(x: buttonX, y: 250, width: 30, height: 30))
+                buttonX = buttonX + 50
+                
+                hanjaButton.backgroundColor = UIColor.blue
+                hanjaButton.layer.cornerRadius = 10
+                hanjaButton.setTitle(row[0] as? String, for: [])
+                //hanjaButton.setTitleColor(UIColor.black, for: [])
+                hanjaButton.addTarget(self, action: #selector(hanjaPressed), for: .touchDown)
+                self.view.addSubview(hanjaButton)
+            }
+            //self.radicalLabel.text = self.radicalString
+        } catch { print(error) }
     }
+    
+    @objc func hanjaPressed(sender: UIButton!){
+        // perform segue
+        if sender.titleLabel?.text != nil {
+            print(sender.titleLabel?.text as! String)
+        }
+        else { print("error") }
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        <#code#>
+//    }
     
 
     /*

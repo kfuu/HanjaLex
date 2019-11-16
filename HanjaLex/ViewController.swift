@@ -21,6 +21,9 @@ class ViewController: UIViewController, UISearchBarDelegate {
         
         // Do any additional setup after loading the view.
         
+        //self.navigationItem.backBarButtonItem!.title = "Back"
+        self.navigationItem.title = "Search"
+        
         self.hanjaSearchBar.searchBarStyle = .minimal// makes it look pretty
         self.hanjaSearchBar.delegate = self // makes it so that the delegate property of the search bar can use the delegate methods. in plain english, if this was not here, the textDidChange function would not be called.
         
@@ -36,44 +39,22 @@ class ViewController: UIViewController, UISearchBarDelegate {
     } // end viewDidLoad()
     
     
-//    @IBAction func testDatabase(_ sender: UIButton) {
-//        print("TESTING DATABASE")
-//
-//        do {
-//            let radicals = try self.database.prepare(Table("radicals"))
-//            for radical in radicals {
-//                print("\(radical[Expression<String>("radical")])      \(radical[Expression<String>("hanjas")])")
-//                print()
-//            }
-//
-//            let hanjas = try self.database.prepare("SELECT hanjas, definition FROM hanja_definition WHERE hanjas = '全'")
-//            for row in hanjas {
-//                print("\(row[0] ?? "None")         \(row[1] ?? "None" )")
-//            }
-//
-//        } catch {
-//            print(error)
-//        }
-//    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // everytime something gets typed into the search bar, this function is called.
         self.searchInput = hanjaSearchBar.text
-        //print(self.searchInput!)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         performSegue(withIdentifier: "resultsID", sender: self)
-        //print("clicked")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultsID"{
-            let results = segue.destination as! resultsPageTableViewController
+            let destVC = segue.destination as! UINavigationController
+            let results = destVC.topViewController as! resultsPageTableViewController
             results.searchRequest = self.searchInput
         }
     }
-    
 
 }
 

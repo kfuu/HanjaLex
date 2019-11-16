@@ -22,28 +22,25 @@ class resultsPageTableViewController: UITableViewController{
     var searchRequest: String!
     var hanjaSelection: String!
     var resultsArray = [HanjaInfo]()
-
+    
+    
     @IBOutlet var resultsTable: UITableView!
-    @IBOutlet weak var resultTitle: UINavigationItem!
-    @IBOutlet weak var hanjaLabel: UILabel!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        self.navigationItem.title = "Searching for: " + searchRequest
+        //self.navigationItem.leftBarButtonItem = backButton
         
-        print("searchRequest: " + searchRequest)
-        self.resultTitle.title = "Searching for: " + searchRequest
         // FIX THIS
         // also add back button
         // implement multiple elements in cell
-        // implement segue to hanja page
+        // implement segue to hanja page (done)
         // etc
         
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            //print(documentDirectory)
             let fileUrl = documentDirectory.appendingPathComponent("hanjadic").appendingPathExtension("sqlite")
             let database = try Connection(fileUrl.path)
             self.database = database
@@ -54,12 +51,6 @@ class resultsPageTableViewController: UITableViewController{
         loadTable()
         
         self.resultsTable.reloadData()
-
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        
     }
     
     func loadTable() {
@@ -67,6 +58,7 @@ class resultsPageTableViewController: UITableViewController{
         
         do {
             let infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hangul LIKE '\(self.searchRequest ?? "인")%' ORDER BY hangul")
+            //print(infos)
             
             for row in infos {
                 var newEntry = HanjaInfo()
@@ -94,7 +86,6 @@ class resultsPageTableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // where is the table?
-        //print(resultsArray)
         
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
@@ -115,11 +106,14 @@ class resultsPageTableViewController: UITableViewController{
         performSegue(withIdentifier: "toHanjaInfo", sender: self)
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toHanjaInfo" {
+            //let destVC = segue.destination as! UINavigationController
             let hanjaPage = segue.destination as! hanjaInfoPage
             hanjaPage.hanjaClicked = self.hanjaSelection
         }
+        
     }
     
 //    func registerTableViewCells() {
