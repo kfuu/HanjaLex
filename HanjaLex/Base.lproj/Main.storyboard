@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HanjaLex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchHome" customModule="HanjaLex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,86 +37,112 @@
                     <navigationItem key="navigationItem" id="N5S-1H-pMt"/>
                     <connections>
                         <outlet property="hanjaSearchBar" destination="lZF-gU-tN2" id="68H-bi-KGg"/>
-                        <segue destination="8IJ-f2-q0Q" kind="show" identifier="resultsID" id="WjP-vs-CFS"/>
+                        <segue destination="6Ko-Np-xh8" kind="show" identifier="resultsID" id="5Ll-Qo-04L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="18.75"/>
         </scene>
-        <!--Results Page Table View Controller-->
-        <scene sceneID="K7U-iR-duI">
+        <!--Results Page View-->
+        <scene sceneID="ORI-3F-Umt">
             <objects>
-                <tableViewController id="Wqw-p6-ZzW" customClass="resultsPageTableViewController" customModule="HanjaLex" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oO3-8J-jny">
+                <viewController id="Cfn-WP-aDy" customClass="resultsPageView" customModule="HanjaLex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S7x-aU-IaZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGg-3v-iKB" userLabel="resultInfoView" customClass="infoViewFromResults" customModule="HanjaLex" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="125"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="searched" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rS0-gt-8Gd">
+                                        <rect key="frame" x="8" y="19" width="140" height="86"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xsi-jT-g0P" userLabel="resultsTable">
+                                <rect key="frame" x="0.0" y="213" width="414" height="649"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="55" id="bCw-xZ-Gvc" customClass="resultsCell" customModule="HanjaLex" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bCw-xZ-Gvc" id="17f-ke-OpI">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="54.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" fixedFrame="YES" text="Hanja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BD-4q-kgx">
+                                                    <rect key="frame" x="20" y="17" width="65" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.5607843137254902" green="0.25098039215686274" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" fixedFrame="YES" text="Hangul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlr-HO-3b9">
+                                                    <rect key="frame" x="100" y="17" width="78" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.16078431372549018" green="0.29803921568627451" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbr-GY-8K6">
+                                                    <rect key="frame" x="196" y="17" width="174" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="englishLabel" destination="Pbr-GY-8K6" id="ABH-CE-CTb"/>
+                                            <outlet property="hangulLabel" destination="Nlr-HO-3b9" id="tWk-0y-rIe"/>
+                                            <outlet property="hanjaLabel" destination="0BD-4q-kgx" id="aao-Xr-cQ2"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="eY9-Kv-VfW">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <viewLayoutGuide key="safeArea" id="Oto-yu-W8w"/>
-                        </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="55" id="bCw-xZ-Gvc" customClass="resultsCell" customModule="HanjaLex" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="116" width="414" height="55"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bCw-xZ-Gvc" id="17f-ke-OpI">
-                                    <rect key="frame" x="0.0" y="0.0" width="376" height="54.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" fixedFrame="YES" text="Hanja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BD-4q-kgx">
-                                            <rect key="frame" x="20" y="17" width="65" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                            <color key="textColor" red="0.5607843137254902" green="0.25098039215686274" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" fixedFrame="YES" text="Hangul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlr-HO-3b9">
-                                            <rect key="frame" x="100" y="17" width="78" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.16078431372549018" green="0.29803921568627451" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbr-GY-8K6">
-                                            <rect key="frame" x="196" y="17" width="174" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
+                        <constraints>
+                            <constraint firstItem="xsi-jT-g0P" firstAttribute="top" secondItem="FGg-3v-iKB" secondAttribute="bottom" id="0Bd-z5-fyE"/>
+                            <constraint firstItem="FGg-3v-iKB" firstAttribute="leading" secondItem="ZlB-Oe-nYh" secondAttribute="leading" id="5Xu-bR-yBk"/>
+                            <constraint firstItem="xsi-jT-g0P" firstAttribute="top" secondItem="ZlB-Oe-nYh" secondAttribute="top" constant="125" id="Ine-zV-rmT"/>
+                            <constraint firstItem="FGg-3v-iKB" firstAttribute="trailing" secondItem="ZlB-Oe-nYh" secondAttribute="trailing" id="YLn-lf-RD7"/>
+                            <constraint firstItem="FGg-3v-iKB" firstAttribute="top" secondItem="ZlB-Oe-nYh" secondAttribute="top" id="Z9i-z8-Qcg"/>
+                            <constraint firstItem="ZlB-Oe-nYh" firstAttribute="bottom" secondItem="xsi-jT-g0P" secondAttribute="bottom" id="a7W-pX-lKp"/>
+                            <constraint firstItem="xsi-jT-g0P" firstAttribute="leading" secondItem="ZlB-Oe-nYh" secondAttribute="leading" id="chO-HT-Q6O"/>
+                            <constraint firstItem="ZlB-Oe-nYh" firstAttribute="trailing" secondItem="xsi-jT-g0P" secondAttribute="trailing" id="gQA-rQ-4Zr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZlB-Oe-nYh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kfr-DF-XLV">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="QHE-pk-jTa">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0FB-yI-RTW" userLabel="Back">
+                                <rect key="frame" x="20" y="7" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
-                                    <outlet property="englishLabel" destination="Pbr-GY-8K6" id="ABH-CE-CTb"/>
-                                    <outlet property="hangulLabel" destination="Nlr-HO-3b9" id="tWk-0y-rIe"/>
-                                    <outlet property="hanjaLabel" destination="0BD-4q-kgx" id="aao-Xr-cQ2"/>
+                                    <segue destination="rk5-Zs-jJP" kind="unwind" unwindAction="didUnwind:" id="GCn-Hy-zjo"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Wqw-p6-ZzW" id="ZxP-gN-L6V"/>
-                            <outlet property="delegate" destination="Wqw-p6-ZzW" id="QMa-01-AWp"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="ICf-gs-RqJ">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="yX2-FD-JcT">
-                            <connections>
-                                <action selector="backButton:" destination="Wqw-p6-ZzW" id="g0m-PX-eNz"/>
-                                <segue destination="3Fe-hr-6k2" kind="unwind" unwindAction="didUnwind:" id="9fA-t6-4ca"/>
-                            </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="resultsTable" destination="oO3-8J-jny" id="4VW-oW-cnK"/>
-                        <segue destination="atR-6s-jL5" kind="show" identifier="toHanjaInfo" id="RRm-Gs-ptv"/>
+                        <outlet property="infoView" destination="FGg-3v-iKB" id="Xb8-KD-57f"/>
+                        <outlet property="resultsTable" destination="xsi-jT-g0P" id="SM7-H6-VQr"/>
+                        <segue destination="atR-6s-jL5" kind="show" identifier="toHanjaInfo" id="hJY-iL-NYV"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wlX-Hq-aaw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="3Fe-hr-6k2" userLabel="Exit" sceneMemberID="exit"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sDo-Ue-M3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rk5-Zs-jJP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2747.826086956522" y="18.75"/>
+            <point key="canvasLocation" x="2886.9565217391305" y="18.75"/>
         </scene>
         <!--Hanja Info Page-->
         <scene sceneID="CVS-j1-YGy">
@@ -161,25 +187,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5a7-D2-DND" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2748" y="837"/>
+            <point key="canvasLocation" x="2887" y="837"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Pic-oG-dTc">
+        <scene sceneID="Z7w-91-BlH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8IJ-f2-q0Q" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Ko-Np-xh8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sJn-tL-4Mk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kfs-h2-iLZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Wqw-p6-ZzW" kind="relationship" relationship="rootViewController" id="1Cg-gh-DfB"/>
+                        <segue destination="Cfn-WP-aDy" kind="relationship" relationship="rootViewController" id="w9A-Wm-s8W"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ff6-OR-uog" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpK-Hw-lRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832" y="19"/>
+            <point key="canvasLocation" x="1935" y="19"/>
         </scene>
     </scenes>
     <resources>

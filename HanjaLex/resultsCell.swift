@@ -20,6 +20,5 @@ class resultsCell: UITableViewCell {
         englishLabel.text = result.english
     }
     
-    
 
 }

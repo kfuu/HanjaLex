@@ -14,7 +14,7 @@ import UIKit
 import SQLite
 import NaturalLanguage
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class SearchHome: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var hanjaSearchBar: UISearchBar!
     var searchInput: String!
@@ -60,7 +60,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultsID"{
             let destVC = segue.destination as! UINavigationController
-            let results = destVC.topViewController as! resultsPageTableViewController
+            let results = destVC.topViewController as! resultsPageView
             
             results.searchRequest = self.searchInput
             
@@ -71,7 +71,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
     
     @IBAction func didUnwind(_ sender: UIStoryboardSegue) {
-        guard let resultsVC = sender.source as? resultsPageTableViewController else {return}
+        guard let resultsVC = sender.source as? resultsPageView else {return}
         
     }
 

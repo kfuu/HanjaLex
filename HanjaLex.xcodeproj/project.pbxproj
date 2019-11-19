@@ -10,7 +10,7 @@
 		75C3BF7C6402FC2544700506 /* Pods_HanjaLex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCBE87B0CFCE75F8F5E5770B /* Pods_HanjaLex.framework */; };
 		E067E1D723838B59000D31DC /* resultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E067E1D623838B59000D31DC /* resultsCell.swift */; };
 		E0883622237B606F005066C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883621237B606F005066C4 /* AppDelegate.swift */; };
-		E0883624237B606F005066C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883623237B606F005066C4 /* ViewController.swift */; };
+		E0883624237B606F005066C4 /* SearchHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883623237B606F005066C4 /* SearchHome.swift */; };
 		E0883627237B606F005066C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0883625237B606F005066C4 /* Main.storyboard */; };
 		E0883629237B6070005066C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0883628237B6070005066C4 /* Assets.xcassets */; };
 		E088362C237B6070005066C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E088362A237B6070005066C4 /* LaunchScreen.storyboard */; };
@@ -20,7 +20,8 @@
 		E0E8E540237CE77200AD893E /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E8E533237CE73800AD893E /* SQLite.framework */; };
 		E0E8E541237CE77C00AD893E /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E8E533237CE73800AD893E /* SQLite.framework */; };
 		E0E8E542237CE77C00AD893E /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0E8E533237CE73800AD893E /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E0E8E54A237CFEDD00AD893E /* resultsPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E8E549237CFEDD00AD893E /* resultsPageTableViewController.swift */; };
+		E0EA561B2384562D001D3DD2 /* resultsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EA561A2384562D001D3DD2 /* resultsPageView.swift */; };
+		E0EA562323846412001D3DD2 /* infoViewFromResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EA562223846412001D3DD2 /* infoViewFromResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +118,7 @@
 		E067E1D623838B59000D31DC /* resultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsCell.swift; sourceTree = "<group>"; };
 		E088361E237B606F005066C4 /* HanjaLex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HanjaLex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0883621237B606F005066C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E0883623237B606F005066C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E0883623237B606F005066C4 /* SearchHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHome.swift; sourceTree = "<group>"; };
 		E0883626237B606F005066C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0883628237B6070005066C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E088362B237B6070005066C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,7 +131,8 @@
 		E0883643237B6070005066C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E09DFC87237E45D400F65711 /* hanjaInfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hanjaInfoPage.swift; sourceTree = "<group>"; };
 		E0E8E528237CE73800AD893E /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "src/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
-		E0E8E549237CFEDD00AD893E /* resultsPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsPageTableViewController.swift; sourceTree = "<group>"; };
+		E0EA561A2384562D001D3DD2 /* resultsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsPageView.swift; sourceTree = "<group>"; };
+		E0EA562223846412001D3DD2 /* infoViewFromResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoViewFromResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,8 +200,9 @@
 			children = (
 				E0883621237B606F005066C4 /* AppDelegate.swift */,
 				E0883625237B606F005066C4 /* Main.storyboard */,
-				E0883623237B606F005066C4 /* ViewController.swift */,
-				E0E8E549237CFEDD00AD893E /* resultsPageTableViewController.swift */,
+				E0883623237B606F005066C4 /* SearchHome.swift */,
+				E0EA561A2384562D001D3DD2 /* resultsPageView.swift */,
+				E0EA562223846412001D3DD2 /* infoViewFromResults.swift */,
 				E067E1D623838B59000D31DC /* resultsCell.swift */,
 				E09DFC87237E45D400F65711 /* hanjaInfoPage.swift */,
 				E0883628237B6070005066C4 /* Assets.xcassets */,
@@ -489,10 +492,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0E8E54A237CFEDD00AD893E /* resultsPageTableViewController.swift in Sources */,
 				E09DFC88237E45D400F65711 /* hanjaInfoPage.swift in Sources */,
-				E0883624237B606F005066C4 /* ViewController.swift in Sources */,
+				E0883624237B606F005066C4 /* SearchHome.swift in Sources */,
 				E0883622237B606F005066C4 /* AppDelegate.swift in Sources */,
+				E0EA562323846412001D3DD2 /* infoViewFromResults.swift in Sources */,
+				E0EA561B2384562D001D3DD2 /* resultsPageView.swift in Sources */,
 				E067E1D723838B59000D31DC /* resultsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
