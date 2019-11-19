@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		75C3BF7C6402FC2544700506 /* Pods_HanjaLex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCBE87B0CFCE75F8F5E5770B /* Pods_HanjaLex.framework */; };
-		E0040AC5237F8F270040EFC0 /* temp_book.png in Resources */ = {isa = PBXBuildFile; fileRef = E0040AC4237F8F260040EFC0 /* temp_book.png */; };
+		E067E1D723838B59000D31DC /* resultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E067E1D623838B59000D31DC /* resultsCell.swift */; };
 		E0883622237B606F005066C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883621237B606F005066C4 /* AppDelegate.swift */; };
 		E0883624237B606F005066C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0883623237B606F005066C4 /* ViewController.swift */; };
 		E0883627237B606F005066C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0883625237B606F005066C4 /* Main.storyboard */; };
@@ -114,7 +114,7 @@
 		256E7911E5C558747E24AB08 /* Pods-HanjaLex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HanjaLex.release.xcconfig"; path = "Target Support Files/Pods-HanjaLex/Pods-HanjaLex.release.xcconfig"; sourceTree = "<group>"; };
 		7AB4CB81DDC790B324B18A66 /* Pods-HanjaLex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HanjaLex.debug.xcconfig"; path = "Target Support Files/Pods-HanjaLex/Pods-HanjaLex.debug.xcconfig"; sourceTree = "<group>"; };
 		DCBE87B0CFCE75F8F5E5770B /* Pods_HanjaLex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HanjaLex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0040AC4237F8F260040EFC0 /* temp_book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = temp_book.png; path = HanjaLex/Assets.xcassets/AppIcon.appiconset/temp_book.png; sourceTree = "<group>"; };
+		E067E1D623838B59000D31DC /* resultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsCell.swift; sourceTree = "<group>"; };
 		E088361E237B606F005066C4 /* HanjaLex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HanjaLex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0883621237B606F005066C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0883623237B606F005066C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -178,7 +178,6 @@
 				E0883640237B6070005066C4 /* HanjaLexUITests */,
 				E0E8E528237CE73800AD893E /* SQLite.xcodeproj */,
 				E088361F237B606F005066C4 /* Products */,
-				E0040AC4237F8F260040EFC0 /* temp_book.png */,
 				E0883667237B61EB005066C4 /* Frameworks */,
 				619B4A51F37501A24F3CD892 /* Pods */,
 			);
@@ -199,6 +198,7 @@
 			children = (
 				E0883621237B606F005066C4 /* AppDelegate.swift */,
 				E0883625237B606F005066C4 /* Main.storyboard */,
+				E067E1D623838B59000D31DC /* resultsCell.swift */,
 				E0883623237B606F005066C4 /* ViewController.swift */,
 				E0E8E549237CFEDD00AD893E /* resultsPageTableViewController.swift */,
 				E09DFC87237E45D400F65711 /* hanjaInfoPage.swift */,
@@ -415,7 +415,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0040AC5237F8F270040EFC0 /* temp_book.png in Resources */,
 				E088362C237B6070005066C4 /* LaunchScreen.storyboard in Resources */,
 				E0883629237B6070005066C4 /* Assets.xcassets in Resources */,
 				E0883627237B606F005066C4 /* Main.storyboard in Resources */,
@@ -494,6 +493,7 @@
 				E09DFC88237E45D400F65711 /* hanjaInfoPage.swift in Sources */,
 				E0883624237B606F005066C4 /* ViewController.swift in Sources */,
 				E0883622237B606F005066C4 /* AppDelegate.swift in Sources */,
+				E067E1D723838B59000D31DC /* resultsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

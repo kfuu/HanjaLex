@@ -29,11 +29,10 @@ class resultsPageTableViewController: UITableViewController{
         super.viewDidLoad()
 
         self.navigationItem.title = "Searching for: " + searchRequest
-        //self.navigationItem.leftBarButtonItem = backButton
         
         // FIX THIS
-        // also add back button
-        // implement multiple elements in cell
+        // also add back button (done)
+        // implement multiple elements in cell (doing)
         // implement segue to hanja page (done)
         // etc
         
@@ -47,7 +46,6 @@ class resultsPageTableViewController: UITableViewController{
         }
         catch { print(error) }
         
-        //self.registerTableViewCells()
         loadTable()
         
         self.resultsTable.reloadData()
@@ -78,7 +76,6 @@ class resultsPageTableViewController: UITableViewController{
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         // how many rows should the table have?
         return self.resultsArray.count
     }
@@ -86,18 +83,11 @@ class resultsPageTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // where is the table?
         
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.text = self.resultsArray[indexPath.row].hanja + "\t" + self.resultsArray[indexPath.row].hangul + "\t" + self.resultsArray[indexPath.row].english
-        
-//        cell.hanjaLabel.text = self.resultsArray[indexPath.row].hanja
-//        cell.hangulLabel.text = self.resultsArray[indexPath.row].hangul
-//        cell.englishLabel.text = self.resultsArray[indexPath.row].english
+        let result = self.resultsArray[indexPath.row]
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! resultsCell
+        cell.setResult(result: result)
         
         return cell
-        
-        //print("error")
-        //return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -114,55 +104,4 @@ class resultsPageTableViewController: UITableViewController{
         
     }
     
-//    func registerTableViewCells() {
-//        let textFieldCell = UINib(nibName: "CustomTableViewCell", bundle: nil)
-//        self.resultsTable.register(textFieldCell, forCellReuseIdentifier: "CustomTableViewCell")
-//    }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

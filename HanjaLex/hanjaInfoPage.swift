@@ -82,7 +82,7 @@ class hanjaInfoPage: UIViewController {
             var i = 0
             
             for char in hanjaClicked {
-                let infos = try self.database.prepare("SELECT radical from radicals WHERE hanjas LIKE '%\(char ?? "人")%'")
+                let infos = try self.database.prepare("SELECT radical from radicals WHERE hanjas LIKE '%\(char)%'")
                 
                 for row in infos {
                     //self.radicalString += (row[0] as! String + " ")
