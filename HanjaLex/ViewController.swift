@@ -6,6 +6,10 @@
 //  Copyright © 2019 Kevin Fu. All rights reserved.
 //
 
+// TO-DO LIST:
+// (MAYBE) implement drop down menu of results (max 5 at a time?)
+// 
+
 import UIKit
 import SQLite
 import NaturalLanguage

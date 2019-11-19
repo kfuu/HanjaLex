@@ -6,6 +6,11 @@
 //  Copyright © 2019 Kevin Fu. All rights reserved.
 //
 
+// TO-DO LIST:
+// make the navigation bar bigger? Or if not, make a section (UIView that locks in place) under the nav bar for showing the hangul/hanja bigger,
+// and show the intermediary info (for hangul input, list all the related Hanjas. for hanja, show hanja definition on first line, then radicals).
+// to do this, you'll have to delete this view controller and change it from TableViewController to UIViewController. make sure to keep the code!
+
 import UIKit
 import SQLite
 
@@ -52,7 +57,7 @@ class resultsPageTableViewController: UITableViewController{
         do {
             let infos:Statement
             if self.koreanInput { infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hangul LIKE '\(self.searchRequest ?? "인")%' ORDER BY hangul") }
-            else { infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hanja LIKE '%\(self.searchRequest ?? "人")%' ORDER BY hanja") }
+            else                { infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hanja LIKE '%\(self.searchRequest ?? "人")%' ORDER BY hangul") }
             
             for row in infos {
                 var newEntry = HanjaInfo()
