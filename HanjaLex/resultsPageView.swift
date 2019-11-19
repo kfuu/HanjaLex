@@ -20,17 +20,20 @@ struct HanjaInfo {
     var english: String = ""
 }
 
-class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var database: Connection!
     
-    var koreanInput: Bool!
+    var isKoreanInput: Bool!
     var searchRequest: String!
     var hanjaSelection: String!
     var resultsArray = [HanjaInfo]()
+    var infoArray = [String]()
     
     @IBOutlet weak var resultsTable: UITableView!
     @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var searchedLabel: UILabel!
+    @IBOutlet weak var infoCollection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,11 +50,51 @@ class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSou
         }
         catch { print(error) }
         
+        loadInfoBox()
         loadTable()
         self.resultsTable.reloadData()
         
+        infoCollection.delegate = self
+        infoCollection.dataSource = self
+        
+//        let layout = self.infoCollection.collectionViewLayout as! UICollectionViewFlowLayout
+//        layout.minimumInteritemSpacing = 0
+        
         resultsTable.delegate = self
         resultsTable.dataSource = self
+    }
+    
+    func loadInfoBox() {
+        self.searchedLabel.text = self.searchRequest
+        
+        do {
+            let infos:Statement
+            if self.isKoreanInput {
+                // show horizonally swipable field that shows possible hanjas
+                infos = try self.database.prepare("SELECT hanjas from korean_pronunciation WHERE hangul = '\(self.searchRequest ?? "인")'")
+                
+                var hanjaString: String = ""
+                for row in infos {
+                    hanjaString = row[0] as! String
+                }
+                for char in hanjaString {
+                    self.infoArray.append(String(char)) }
+                }
+            
+            else {
+                // show definition (to the right of searchText)
+                // & radicals below
+                infos = try self.database.prepare("SELECT radical FROM radicals WHERE hanjas LIKE '%\(self.searchRequest ?? "人")%'")
+                
+                for radical in infos {
+                    //print(radical)
+                    self.infoArray.append(radical[0] as! String)
+                }
+            }
+            
+        }
+        catch { print(error) }
+        
     }
     
     func loadTable() {
@@ -59,7 +102,7 @@ class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         do {
             let infos:Statement
-            if self.koreanInput { infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hangul LIKE '\(self.searchRequest ?? "인")%' ORDER BY hangul") }
+            if self.isKoreanInput { infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hangul LIKE '\(self.searchRequest ?? "인")%' ORDER BY hangul") }
             else                { infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hanja LIKE '%\(self.searchRequest ?? "人")%' ORDER BY hangul") }
             
             for row in infos {
@@ -74,6 +117,26 @@ class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSou
         } catch { print(error) }
         
     }
+    
+    /////////////////
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.infoArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let info = self.infoArray[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "infoCell", for: indexPath) as! infoCell
+        cell.setString(info: info)
+        
+        return cell
+    }
+    
+    /////////////////
     
 
     func numberOfSections(in tableView: UITableView) -> Int {

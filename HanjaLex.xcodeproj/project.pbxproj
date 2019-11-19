@@ -21,7 +21,7 @@
 		E0E8E541237CE77C00AD893E /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E8E533237CE73800AD893E /* SQLite.framework */; };
 		E0E8E542237CE77C00AD893E /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0E8E533237CE73800AD893E /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0EA561B2384562D001D3DD2 /* resultsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EA561A2384562D001D3DD2 /* resultsPageView.swift */; };
-		E0EA562323846412001D3DD2 /* infoViewFromResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EA562223846412001D3DD2 /* infoViewFromResults.swift */; };
+		E0EA562C238475C6001D3DD2 /* infoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EA562B238475C6001D3DD2 /* infoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,7 +132,7 @@
 		E09DFC87237E45D400F65711 /* hanjaInfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hanjaInfoPage.swift; sourceTree = "<group>"; };
 		E0E8E528237CE73800AD893E /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "src/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		E0EA561A2384562D001D3DD2 /* resultsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsPageView.swift; sourceTree = "<group>"; };
-		E0EA562223846412001D3DD2 /* infoViewFromResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoViewFromResults.swift; sourceTree = "<group>"; };
+		E0EA562B238475C6001D3DD2 /* infoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +202,7 @@
 				E0883625237B606F005066C4 /* Main.storyboard */,
 				E0883623237B606F005066C4 /* SearchHome.swift */,
 				E0EA561A2384562D001D3DD2 /* resultsPageView.swift */,
-				E0EA562223846412001D3DD2 /* infoViewFromResults.swift */,
+				E0EA562B238475C6001D3DD2 /* infoCell.swift */,
 				E067E1D623838B59000D31DC /* resultsCell.swift */,
 				E09DFC87237E45D400F65711 /* hanjaInfoPage.swift */,
 				E0883628237B6070005066C4 /* Assets.xcassets */,
@@ -493,9 +493,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E09DFC88237E45D400F65711 /* hanjaInfoPage.swift in Sources */,
+				E0EA562C238475C6001D3DD2 /* infoCell.swift in Sources */,
 				E0883624237B606F005066C4 /* SearchHome.swift in Sources */,
 				E0883622237B606F005066C4 /* AppDelegate.swift in Sources */,
-				E0EA562323846412001D3DD2 /* infoViewFromResults.swift in Sources */,
 				E0EA561B2384562D001D3DD2 /* resultsPageView.swift in Sources */,
 				E067E1D723838B59000D31DC /* resultsCell.swift in Sources */,
 			);

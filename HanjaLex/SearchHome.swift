@@ -64,9 +64,9 @@ class SearchHome: UIViewController, UISearchBarDelegate {
             
             results.searchRequest = self.searchInput
             
-            if detectedLanguage(for: self.searchInput)! == "Korean"     { results.koreanInput = true }
-            else if detectedLanguage(for: self.searchInput)! == "Chinese (Traditional)" || detectedLanguage(for: self.searchInput)! == "Chinese (Simplified)"                                           { results.koreanInput = false }
-            else                                                        { results.koreanInput = false } // non korean & non chinese
+            if detectedLanguage(for: self.searchInput)! == "Korean"     { results.isKoreanInput = true }
+            else if detectedLanguage(for: self.searchInput)! == "Chinese (Traditional)" || detectedLanguage(for: self.searchInput)! == "Chinese (Simplified)"                                           { results.isKoreanInput = false }
+            else                                                        { results.isKoreanInput = false } // non korean & non chinese
         }
     }
     
