@@ -8,6 +8,7 @@
 
 import UIKit
 import SQLite
+import NaturalLanguage
 
 class ViewController: UIViewController, UISearchBarDelegate {
     
@@ -18,11 +19,6 @@ class ViewController: UIViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
-        //self.navigationItem.backBarButtonItem!.title = "Back"
-        self.navigationItem.title = "Search"
         
         self.hanjaSearchBar.searchBarStyle = .minimal// makes it look pretty
         self.hanjaSearchBar.delegate = self // makes it so that the delegate property of the search bar can use the delegate methods. in plain english, if this was not here, the textDidChange function would not be called.
@@ -39,6 +35,14 @@ class ViewController: UIViewController, UISearchBarDelegate {
         
     } // end viewDidLoad()
     
+    func detectedLanguage(for string: String) -> String? {
+        let recognizer = NLLanguageRecognizer()
+        recognizer.processString(string)
+        guard let languageCode = recognizer.dominantLanguage?.rawValue else { return nil }
+        let detectedLanguage = Locale.current.localizedString(forIdentifier: languageCode)
+        return detectedLanguage
+    }
+    
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // everytime something gets typed into the search bar, this function is called.
@@ -53,7 +57,12 @@ class ViewController: UIViewController, UISearchBarDelegate {
         if segue.identifier == "resultsID"{
             let destVC = segue.destination as! UINavigationController
             let results = destVC.topViewController as! resultsPageTableViewController
+            
             results.searchRequest = self.searchInput
+            
+            if detectedLanguage(for: self.searchInput)! == "Korean"     { results.koreanInput = true }
+            else if detectedLanguage(for: self.searchInput)! == "Chinese (Traditional)" || detectedLanguage(for: self.searchInput)! == "Chinese (Simplified)"                                           { results.koreanInput = false }
+            else                                                        { results.koreanInput = false } // non korean & non chinese
         }
     }
     

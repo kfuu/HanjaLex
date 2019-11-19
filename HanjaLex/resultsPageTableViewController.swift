@@ -19,6 +19,7 @@ class resultsPageTableViewController: UITableViewController{
     
     var database: Connection!
     
+    var koreanInput: Bool!
     var searchRequest: String!
     var hanjaSelection: String!
     var resultsArray = [HanjaInfo]()
@@ -29,12 +30,6 @@ class resultsPageTableViewController: UITableViewController{
         super.viewDidLoad()
 
         self.navigationItem.title = "Searching for: " + searchRequest
-        
-        // FIX THIS
-        // also add back button (done)
-        // implement multiple elements in cell (doing)
-        // implement segue to hanja page (done)
-        // etc
         
         do {
 //            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
@@ -55,7 +50,9 @@ class resultsPageTableViewController: UITableViewController{
         // with given searchRequest, perform SQL query and put each row into table
         
         do {
-            let infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hangul LIKE '\(self.searchRequest ?? "인")%' ORDER BY hangul")
+            let infos:Statement
+            if self.koreanInput { infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hangul LIKE '\(self.searchRequest ?? "인")%' ORDER BY hangul") }
+            else { infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hanja LIKE '%\(self.searchRequest ?? "人")%' ORDER BY hanja") }
             
             for row in infos {
                 var newEntry = HanjaInfo()
