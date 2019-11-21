@@ -55,16 +55,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGg-3v-iKB" userLabel="resultInfoView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="125"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOk-uO-5ni">
-                                        <rect key="frame" x="21" y="14" width="113" height="63"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="46"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOk-uO-5ni">
+                                        <rect key="frame" x="19" y="15" width="47" height="104"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="87"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dns-Vo-HPV">
-                                        <rect key="frame" x="23" y="77" width="367" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dns-Vo-HPV">
+                                        <rect key="frame" x="85" y="80" width="321" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="J8w-ss-J6X">
                                             <size key="itemSize" width="40" height="32"/>
@@ -95,11 +93,27 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Definition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T63-tI-L9T">
+                                        <rect key="frame" x="85" y="38" width="55" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
+                                <constraints>
+                                    <constraint firstItem="T63-tI-L9T" firstAttribute="top" secondItem="FGg-3v-iKB" secondAttribute="top" constant="38" id="2SR-vf-Y6Z"/>
+                                    <constraint firstItem="gOk-uO-5ni" firstAttribute="top" secondItem="FGg-3v-iKB" secondAttribute="top" constant="15" id="7Pa-e0-Lua"/>
+                                    <constraint firstItem="Dns-Vo-HPV" firstAttribute="leading" secondItem="gOk-uO-5ni" secondAttribute="trailing" constant="19" id="9Jp-pc-4q8"/>
+                                    <constraint firstItem="gOk-uO-5ni" firstAttribute="leading" secondItem="FGg-3v-iKB" secondAttribute="leading" constant="19" id="AwO-or-hYD"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dns-Vo-HPV" secondAttribute="trailing" constant="8" id="nJe-NL-l3c"/>
+                                    <constraint firstItem="T63-tI-L9T" firstAttribute="leading" secondItem="gOk-uO-5ni" secondAttribute="trailing" constant="19" id="rja-gF-Dmr"/>
+                                    <constraint firstItem="Dns-Vo-HPV" firstAttribute="top" secondItem="T63-tI-L9T" secondAttribute="bottom" constant="27.5" id="yYq-2V-2xa"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dns-Vo-HPV" secondAttribute="bottom" constant="8" id="zMm-2Z-zha"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xsi-jT-g0P" userLabel="resultsTable">
                                 <rect key="frame" x="0.0" y="213" width="414" height="649"/>
@@ -160,7 +174,7 @@
                     <navigationItem key="navigationItem" id="Kfr-DF-XLV">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="QHE-pk-jTa">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0FB-yI-RTW" userLabel="Back">
-                                <rect key="frame" x="20" y="7" width="50" height="30"/>
+                                <rect key="frame" x="20" y="7" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -170,6 +184,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="definitionLabel" destination="T63-tI-L9T" id="9z5-UH-Z4u"/>
                         <outlet property="infoCollection" destination="Dns-Vo-HPV" id="ccp-To-qWR"/>
                         <outlet property="infoView" destination="FGg-3v-iKB" id="jM6-AF-YUl"/>
                         <outlet property="resultsTable" destination="xsi-jT-g0P" id="SM7-H6-VQr"/>

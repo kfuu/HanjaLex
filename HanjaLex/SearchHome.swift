@@ -54,7 +54,22 @@ class SearchHome: UIViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // edge cases:
+        // no input
+        // input with spaces
+        // incomplete hangul character
+        
+        if isSearchBarEmpty()   { self.searchInput = "人" }
+        else                    { self.searchInput.removeAll(where: {$0 == " "})
+                                  if self.searchInput == "" { self.searchInput = "人" } }
+                                // check spaces. if exist, remove them
+        
         performSegue(withIdentifier: "resultsID", sender: self)
+        
+    }
+    
+    func isSearchBarEmpty() -> Bool {
+        return self.hanjaSearchBar.text?.isEmpty ?? true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -63,10 +78,7 @@ class SearchHome: UIViewController, UISearchBarDelegate {
             let results = destVC.topViewController as! resultsPageView
             
             results.searchRequest = self.searchInput
-            
-            if detectedLanguage(for: self.searchInput)! == "Korean"     { results.isKoreanInput = true }
-            else if detectedLanguage(for: self.searchInput)! == "Chinese (Traditional)" || detectedLanguage(for: self.searchInput)! == "Chinese (Simplified)"                                           { results.isKoreanInput = false }
-            else                                                        { results.isKoreanInput = false } // non korean & non chinese
+            results.isKoreanInput = detectedLanguage(for: self.searchInput) ?? "Korean" == "Korean"
         }
     }
     

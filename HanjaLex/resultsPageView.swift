@@ -34,6 +34,7 @@ class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var searchedLabel: UILabel!
     @IBOutlet weak var infoCollection: UICollectionView!
+    @IBOutlet weak var definitionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,21 +70,38 @@ class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         do {
             let infos:Statement
+            let dbDefinition:Statement
             if self.isKoreanInput {
                 // show horizonally swipable field that shows possible hanjas
-                infos = try self.database.prepare("SELECT hanjas from korean_pronunciation WHERE hangul = '\(self.searchRequest ?? "인")'")
                 
+                //self.associatedLabel.text = "Associated Hanja:"
+                
+                self.definitionLabel.text = ""
+                
+                infos = try self.database.prepare("SELECT hanjas from korean_pronunciation WHERE hangul = '\(self.searchRequest ?? "인")'")
+
                 var hanjaString: String = ""
                 for row in infos {
                     hanjaString = row[0] as! String
                 }
                 for char in hanjaString {
-                    self.infoArray.append(String(char)) }
+                    if char != " " { self.infoArray.append(String(char))} }
                 }
             
             else {
                 // show definition (to the right of searchText)
                 // & radicals below
+                
+                //self.associatedLabel.text = "Associated Hanja Radicals:"
+                
+                dbDefinition = try self.database.prepare("SELECT definition FROM hanja_definition WHERE hanjas = '\(self.searchRequest ?? "인")'")
+                
+                var definition: String = ""
+                for row in dbDefinition {
+                    definition = row[0] as! String
+                }
+                self.definitionLabel.text = definition
+                
                 infos = try self.database.prepare("SELECT radical FROM radicals WHERE hanjas LIKE '%\(self.searchRequest ?? "人")%'")
                 
                 for radical in infos {
