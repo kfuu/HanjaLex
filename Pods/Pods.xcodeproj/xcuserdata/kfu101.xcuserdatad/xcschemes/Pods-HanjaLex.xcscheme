@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A9B72DC060567CE8271AA5EDF5696BCF"
+               BlueprintIdentifier = "E09D52E2C740F3878389CB72290ED458"
                BuildableName = "Pods_HanjaLex.framework"
                BlueprintName = "Pods-HanjaLex"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A9B72DC060567CE8271AA5EDF5696BCF"
+            BlueprintIdentifier = "E09D52E2C740F3878389CB72290ED458"
             BuildableName = "Pods_HanjaLex.framework"
             BlueprintName = "Pods-HanjaLex"
             ReferencedContainer = "container:Pods.xcodeproj">

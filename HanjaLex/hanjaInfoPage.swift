@@ -9,6 +9,7 @@
 import UIKit
 import SQLite
 import WebKit
+
 //import UPCarouselFlowLayout
 
 class hanjaInfoPage: UIViewController {
@@ -18,15 +19,28 @@ class hanjaInfoPage: UIViewController {
     @IBOutlet weak var radicalLabel: UILabel!
     var radicalString:String = "radicals: "
     
+    @IBOutlet weak var etymologyLabel: UILabel!
+    @IBOutlet weak var definitionLabel: UILabel!
+    @IBOutlet weak var otherWordsLabel: UILabel!
+    
+    @IBOutlet weak var strokeOrderImage: UIImageView!
+    
     var database: Connection!
+    
+    let webView = WKWebView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentHanja.text = self.hanjaClicked
         
-//        let encodedHanja = hanjaClicked.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) //as! String // converts a Chinese character / hangul character to something that can be used in URL
+        let encodedHanja = hanjaClicked.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) //as! String // converts a Chinese character / hangul character to something that can be used in URL
 //        // check for case of multiple characters in hanjaClicked
-//        let url = "https://en.wiktionary.org/wiki/\(encodedHanja ?? "%E4%BA%BA")" // default value is 人 for now
+        let url = "https://en.wiktionary.org/wiki/\(encodedHanja ?? "%E4%BA%BA")" // default value is 人 for now
+        let myURL = URL(string: url)
+        let request = URLRequest(url: myURL!)
+        
+        
+        
 //        guard let myURL = URL(string: url) else {
 //            print("Error: \(url) doesn't seem to be a valid URL")
 //            return
@@ -49,28 +63,6 @@ class hanjaInfoPage: UIViewController {
         catch { print(error) }
         
         loadInfo()
-    
-        // "https://en.wiktionary.org/wiki/\(hanjaClicked)"
-        // using urlsession and getting json from webpage
-//        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else { return }
-//        print("test")
-//        let session = URLSession.shared
-//        session.dataTask(with: url) { (data, response, error) in
-//            if let response = response {
-//                print(response)
-//            }
-//
-//            if let data = data {
-//                print(data)
-//                do {
-//                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-//                    print(json)
-//                } catch { print(error) }
-//            }
-//        }.resume()
-//
-//        // Do any additional setup after loading the view.
-//        print("hello")
         
     } // end viewDidLoad()
     

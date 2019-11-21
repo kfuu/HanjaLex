@@ -1,16 +1,20 @@
 PODS:
+  - SwiftSoup (2.2.2)
   - UPCarouselFlowLayout (1.1.2)
 
 DEPENDENCIES:
+  - SwiftSoup
   - UPCarouselFlowLayout
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - SwiftSoup
     - UPCarouselFlowLayout
 
 SPEC CHECKSUMS:
+  SwiftSoup: 77147d707df716eb6dbd06c5c24d35ad5ba62ee1
   UPCarouselFlowLayout: 4c7d2c43a10ebb1597bde502a53699d378341dad
 
-PODFILE CHECKSUM: 672b5bc69a3b967014b4f53e60ea1325a9aa83ec
+PODFILE CHECKSUM: ab133d46b27d1c1a27af4e48528bc69be7e81051
 
 COCOAPODS: 1.6.1
