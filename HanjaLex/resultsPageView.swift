@@ -53,17 +53,17 @@ class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         loadInfoBox()
         loadTable()
+        
         self.resultsTable.reloadData()
         
         infoCollection.delegate = self
         infoCollection.dataSource = self
         
-//        let layout = self.infoCollection.collectionViewLayout as! UICollectionViewFlowLayout
-//        layout.minimumInteritemSpacing = 0
-        
         resultsTable.delegate = self
         resultsTable.dataSource = self
-    }
+    } // end viewDidLoad()
+    
+    //////////////////// USER DEFINED FUNCTIONS ////////////
     
     func loadInfoBox() {
         self.searchedLabel.text = self.searchRequest
@@ -74,40 +74,27 @@ class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSou
             if self.isKoreanInput {
                 // show horizonally swipable field that shows possible hanjas
                 
-                //self.associatedLabel.text = "Associated Hanja:"
-                
                 self.definitionLabel.text = ""
                 
                 infos = try self.database.prepare("SELECT hanjas from korean_pronunciation WHERE hangul = '\(self.searchRequest ?? "인")'")
 
                 var hanjaString: String = ""
-                for row in infos {
-                    hanjaString = row[0] as! String
-                }
-                for char in hanjaString {
-                    if char != " " { self.infoArray.append(String(char))} }
-                }
+                for row in infos { hanjaString = row[0] as! String }
+                for char in hanjaString { if char != " " { self.infoArray.append(String(char))} } }
             
             else {
                 // show definition (to the right of searchText)
                 // & radicals below
                 
-                //self.associatedLabel.text = "Associated Hanja Radicals:"
-                
                 dbDefinition = try self.database.prepare("SELECT definition FROM hanja_definition WHERE hanjas = '\(self.searchRequest ?? "인")'")
                 
                 var definition: String = ""
-                for row in dbDefinition {
-                    definition = row[0] as! String
-                }
+                for row in dbDefinition { definition = row[0] as! String }
                 self.definitionLabel.text = definition
                 
                 infos = try self.database.prepare("SELECT radical FROM radicals WHERE hanjas LIKE '%\(self.searchRequest ?? "人")%'")
                 
-                for radical in infos {
-                    //print(radical)
-                    self.infoArray.append(radical[0] as! String)
-                }
+                for radical in infos { self.infoArray.append(radical[0] as! String) }
             }
             
         }
@@ -115,13 +102,12 @@ class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSou
         
     }
     
-    func loadTable() {
-        // with given searchRequest, perform SQL query and put each row into table
+    func loadTable() { // with given searchRequest, perform SQL query and put each row into table
         
         do {
             let infos:Statement
-            if self.isKoreanInput { infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hangul LIKE '\(self.searchRequest ?? "인")%' ORDER BY hangul") }
-            else                { infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hanja LIKE '%\(self.searchRequest ?? "人")%' ORDER BY hangul") }
+            if self.isKoreanInput   { infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hangul LIKE '\(self.searchRequest ?? "인")%' ORDER BY hangul") }
+            else                    { infos = try self.database.prepare("SELECT hanja, hangul, english from hanjas WHERE hanja LIKE '%\(self.searchRequest ?? "人")%' ORDER BY hangul") }
             
             for row in infos {
                 var newEntry = HanjaInfo()
@@ -136,7 +122,7 @@ class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSou
         
     }
     
-    /////////////////
+    //////////////////// FUNCTIONS FROM COLLECTIONVIEW DELEGATE ////////////
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -154,7 +140,7 @@ class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSou
         return cell
     }
     
-    /////////////////
+    //////////////////// FUNCTIONS FROM TABLEVIEW DELEGATE ////////////
     
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -181,6 +167,8 @@ class resultsPageView: UIViewController, UITableViewDelegate, UITableViewDataSou
         self.hanjaSelection = self.resultsArray[indexPath.row].hanja as String?
         performSegue(withIdentifier: "toHanjaInfo", sender: self)
     }
+    
+    //////////////////// SEGUE PREPARATION ////////////
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toHanjaInfo" {
